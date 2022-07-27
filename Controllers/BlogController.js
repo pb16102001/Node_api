@@ -4,7 +4,7 @@ class BlogController{
 
     static getall = async(req,res)=>{
         try{
-           // res.header("Access-Control-Allow-Origin","*")
+            res.header("Access-Control-Allow-Origin","*")
             const result = await blogModel.find()
             res.status(200).json({
                 //message:"routing is working fine"
