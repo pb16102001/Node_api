@@ -27,7 +27,7 @@ connectDB()
 
 
 //load route
- app.use('/',web)
+ app.use('/api/pn',web)
 
 app.get('/', (req, res) => {
     res.send('Hello MEAN')
