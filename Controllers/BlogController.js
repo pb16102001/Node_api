@@ -41,8 +41,9 @@ class BlogController {
 
         }
     }
-    
+
     static blogview = async (req, res) => {
+        res.header("Access-Control-Allow-Origin", "*")
         console.log(req.params.id);
         try {
             const blog = await blogModel.findById(req.params.id)
@@ -62,3 +63,6 @@ class BlogController {
 }
 
 module.exports = BlogController
+
+
+//https://young-spire-25464.herokuapp.com/api/pn/blogview/62e15a2bb86f9da0fab64fca
