@@ -43,9 +43,10 @@ class BlogController {
     }
 
     static blogview = async (req, res) => {
-        res.header("Access-Control-Allow-Origin", "*")
+        
         console.log(req.params.id);
         try {
+            res.header("Access-Control-Allow-Origin", "*")
             const blog = await blogModel.findById(req.params.id)
             res.status(200).json({
                 //message:"TOuting is working fine"
