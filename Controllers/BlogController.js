@@ -49,7 +49,7 @@ class BlogController {
             res.header("Access-Control-Allow-Origin", "*")
             const blog = await blogModel.findById(req.params.id)
             res.status(200).json({
-                //message:"TOuting is working fine"
+                //message:"Routing is working fine"
                 success: true,
                 blog
 
@@ -66,4 +66,3 @@ class BlogController {
 module.exports = BlogController
 
 
-//https://young-spire-25464.herokuapp.com/api/pn/blogview/62e15a2bb86f9da0fab64fca
