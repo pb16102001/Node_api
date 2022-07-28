@@ -1,57 +1,64 @@
 const blogModel = require("../models/Blog")
 
-class BlogController{
+class BlogController {
 
-    static getall = async(req,res)=>{
-        try{
-            res.header("Access-Control-Allow-Origin","*")
-            const result = await blogModel.find()
+    static getall = async (req, res) => {
+        try {
+            res.header("Access-Control-Allow-Origin", "*")
+            const getall = await blogModel.find()
             res.status(200).json({
-                //message:"routing is working fine"
-                success:true,
-                result
-             
+                //message:"TOuting is working fine"
+                success: true,
+                getall
+
             })
-            //console.log(result)
-            res.send(result)
-        }catch(err){
+            console.log(getall)
+            res.send(getall)
+        } catch (err) {
             console.log(err);
         }
     }
 
 
-    static bloginsert = async(req,res)=>{
+    static bloginsert = async (req, res) => {
         console.log(req.body);
-        try{
-            const {title,description,body}=req.body
+        try {
+            const { title, description, body } = req.body
 
-            const result=new blogModel({
-                title:title,
-                description:description,
-                body:body
+            const result = new blogModel({
+                title: title,
+                description: description,
+                body: body
             })
 
             //save data
-           const result1= await result.save()
-           res.send(result1)
-        
+            const result1 = await result.save()
+            res.send(result1)
+
         }
-        catch(error){
+        catch (error) {
             console.log(error);
-            
+
         }
     }
-    // static display = async (req, res) => {
-    //     try{
-    //         const {_id} = req.user;
-    //         const result = await blogModel.find({user_id:_id})
-    //     //console.log(result);
-    //     res.render('', { data1:result})
-    // }catch(error){
-    //     console.log(err);
-    // }
     
-    // }
+    static blogview = async (req, res) => {
+        console.log(req.params.id);
+        try {
+            const blog = await blogModel.findById(req.params.id)
+            res.status(200).json({
+                //message:"TOuting is working fine"
+                success: true,
+                blog
+
+            })
+        
+
+        } catch (error) {
+            console.log(err);
+        }
+
+    }
 }
 
-module.exports=BlogController
+module.exports = BlogController

@@ -4,7 +4,7 @@ const router = express.Router();
 
 router.get('/getall',BlogController.getall)
 router.post('/bloginsert',BlogController.bloginsert)
-//router.get('/display',BlogController.display)
+router.get('/blogview/:id',BlogController.blogview)
 
 
 
