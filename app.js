@@ -6,8 +6,8 @@ var bodyParser=require('body-parser')
 const { Router } = require('express')
 
 // parse application/x-www-form-urlencoded
-app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
+//app.use(bodyParser.urlencoded({ extended: false }))
+app.use(express.json())
 //connecting db
 const {connectDB}= require('./DB/connectDB.js')
 
