@@ -5,15 +5,15 @@ class contactController{
     static contactall = async (req, res) => {
         try {
             res.header("Access-Control-Allow-Origin", "*")
-            const getall = await contactModel.find()
+            const contactall = await contactModel.find()
             res.status(200).json({
                 //message:"TOuting is working fine"
                 success: true,
                 contactall
 
             })
-            //console.log(getall)
-            //res.send(getall)
+            //console.log(contactall)
+            //res.send(contactall)
         } catch (err) {
             console.log(err);
         }
