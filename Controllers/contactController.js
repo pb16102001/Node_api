@@ -4,7 +4,7 @@ class contactController{
 
     static contactall = async (req, res) => {
         try {
-            //res.header("Access-Control-Allow-Origin", "*")
+            res.header("Access-Control-Allow-Origin", "*")
             const contactall = await contactModel.find()
             res.status(200).json({
                 //message:"TOuting is working fine"
@@ -25,7 +25,7 @@ class contactController{
             res.header("Access-Control-Allow-Origin", "*")
             const contact = await contactModel.create(req.body)
 
-            res.status(200).json({
+            res.status(201).json({
                 success:true,
                 contact
             })

@@ -12,8 +12,8 @@ class BlogController {
                 getall
 
             })
-            console.log(getall)
-            res.send(getall)
+            //console.log(getall)
+            //res.send(getall)
         } catch (err) {
             console.log(err);
         }
