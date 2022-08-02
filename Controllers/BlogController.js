@@ -63,6 +63,26 @@ class BlogController {
     }
 
 
+    static updateblog = async (req, res) => {
+        try {
+            //res.header("Access-Control-Allow-Origin", "*")
+            const data = await blogModel.findByIdAndUpdate(req.params.id, req.body)
+
+            res.status(200).json({
+                //message:"routing is working fine"
+                success: true,
+                data
+
+            })
+            //console.log(allproducts)
+            //res.send(allproducts)
+        } catch (err) {
+            console.log(err);
+        }
+
+    }
+
+
     
 }
 
