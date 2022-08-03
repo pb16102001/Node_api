@@ -64,9 +64,13 @@ class BlogController {
 
 
     static updateblog = async (req, res) => {
+        console.log(req.params.id)
+        console.log(req.body)
+       
         try {
             //res.header("Access-Control-Allow-Origin", "*")
             const getall = await blogModel.findByIdAndUpdate(req.params.id, req.body)
+            console.log(getall)
 
             res.status(200).json({
                 //message:"routing is working fine"
@@ -74,8 +78,8 @@ class BlogController {
                 getall
 
             })
-            console.log(getall)
-            res.send(getall)
+            //console.log(getall)
+            //res.send(getall)
         } catch (err) {
             console.log(err);
         }
