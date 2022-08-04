@@ -87,6 +87,8 @@ class BlogController {
     }
     
     static deleteblog = async (req, res) => {
+        res.header("Access-Control-Allow-Origin", "*")
+
         try {
             const blog = await blogModel.findByIdAndDelete(req.params.id,req.body)
             if (!blog) {
