@@ -85,6 +85,24 @@ class BlogController {
         }
 
     }
+    
+    static deleteblog = async (req, res) => {
+        try {
+            const blog = await blogModel.findByIdAndDelete(req.params.id,req.body)
+            if (!blog) {
+               return res
+                .status(500)
+                .send({ status: "unsuccess", message: "Blog Not Found" });
+            }
+            await blogModel.remove(blog)
+            res
+                .status(200)
+                .send({ status: "success", message: "Blog Delete Success" });
+        }
+        catch (error) {
+            console.log(error);
+        }
+    }
 
 
     
