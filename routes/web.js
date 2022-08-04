@@ -7,7 +7,7 @@ router.get('/getall',BlogController.getall)
 router.post('/bloginsert',BlogController.bloginsert)
 router.get('/blogview/:id',BlogController.blogview)
 router.put('/blogupdate/:id',BlogController.updateblog)
-router.get('/blogdelete/:id',BlogController.deleteblog)
+router.delete('/blogdelete/:id',BlogController.deleteblog)
 router.get('/contactall',contactController.contactall)
 router.post('/contactinsert',contactController.contactinsert)
 
