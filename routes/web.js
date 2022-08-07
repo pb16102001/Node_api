@@ -15,6 +15,7 @@ router.post('/contactinsert',contactController.contactinsert)
 
 //userController
 router.post('/register',UserController.user_registration)
+router.post('/login',UserController.user_login)
 
 
 
