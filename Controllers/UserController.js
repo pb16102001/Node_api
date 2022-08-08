@@ -68,7 +68,7 @@ class UserController{
                         //generate jwt token
                         //const token = jwt.sign({ userID: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '5d' })
                         res
-                        .status(201)
+                        // .status(201)
                         .send({ status: "success", message: "Login Success","Token":token });
                         }
                     } else {
