@@ -53,7 +53,7 @@ class UserController{
     }
 
     static user_login = async (req, res) => {
-        // console.log(req.body)
+         console.log(req.body)
 
         try {
             const { email, password } = req.body
@@ -69,7 +69,7 @@ class UserController{
                         //const token = jwt.sign({ userID: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '5d' })
                         res
                         // .status(201)
-                        .send({ status: "success", message: "Login Success","Token":token });
+                        .send({ status: "success", message: "Login Success" });
                         }
                     } else {
                         res.send({ status: "failed", message: "email and password  not match" });
@@ -82,7 +82,7 @@ class UserController{
             }
 
         } catch (error) {
-            console.log(error)
+            //console.log(error)
         }
     }
 
