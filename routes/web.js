@@ -1,6 +1,7 @@
 const express = require('express');
 const BlogController = require('../Controllers/BlogController');
 const contactController = require('../Controllers/contactController');
+const ProjectController = require('../Controllers/ProjectController');
 const UserController = require('../Controllers/UserController');
 const router = express.Router();
 
@@ -17,6 +18,10 @@ router.post('/contactinsert',contactController.contactinsert)
 router.post('/register',UserController.user_registration)
 router.post('/login',UserController.user_login)
 
+
+//projectController
+router.get('/projectall',ProjectController.projectall)
+router.post('/projectinsert',ProjectController.projectinsert)
 
 
 
