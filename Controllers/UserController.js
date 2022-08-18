@@ -1,5 +1,6 @@
 const UserModel = require("../models/User");
 const bcrypt = require('bcrypt')
+const jwt = require('jsonwebtoken');
 
 class UserController{
 
@@ -53,7 +54,7 @@ class UserController{
     }
 
     static user_login = async (req, res) => {
-         console.log(req.body)
+         //console.log(req.body)
 
         try {
             const { email, password } = req.body
@@ -70,7 +71,7 @@ class UserController{
                             process.env.JWT_SECRET_KEY, { expiresIn: '5d' })
                         console.log(token)
                         res.cookie('token',token)
-
+                        //}
                         res
                         .status(201)
                         .send({ status: "success", message: "Login Success", "Token":token});
