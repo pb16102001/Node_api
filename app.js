@@ -6,7 +6,7 @@ const cors = require('cors');
 app.use(cors());
 var bodyParser=require('body-parser')
 const { Router } = require('express')
-const cookieParser = require('cookie-parser')
+
 const dotenv = require('dotenv')
 
 // parse application/x-www-form-urlencoded
@@ -18,7 +18,7 @@ app.use(express.json())
 //connecting db
 const {connectDB}= require('./DB/connectDB.js')
 
-app.use(cookieParser())
+
 
 //import routes
 const web = require('./routes/web.js');
