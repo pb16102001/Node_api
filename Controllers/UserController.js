@@ -63,14 +63,18 @@ class UserController{
                 if (user!= null) {
                     const isMatch = await bcrypt.compare(password, user.password)
                     if (user.email == email && isMatch) {
-                        if(user.role=="user"){
+                        //if(user.role=="user"){
                         //console.log(save_user)
                         //generate jwt token
-                        //const token = jwt.sign({ userID: user._id }, process.env.JWT_SECRET_KEY, { expiresIn: '5d' })
+                        const token = jwt.sign({ userID: user._id }, 
+                            process.env.JWT_SECRET_KEY, { expiresIn: '5d' })
+                        console.log(token)
+                        res.cookie('token',token)
+
                         res
-                        // .status(201)
-                        .send({ status: "success", message: "Login Success" });
-                        }
+                        .status(201)
+                        .send({ status: "success", message: "Login Success", "Token":token});
+                        
                     } else {
                         res.send({ status: "failed", message: "email and password  not match" });
 
