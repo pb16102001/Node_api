@@ -12,8 +12,7 @@ class ProjectController{
                 projectall
 
             })
-            //console.log(contactall)
-            //res.send(contactall)
+            
         } catch (err) {
             console.log(err);
         }

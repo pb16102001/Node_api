@@ -10,6 +10,8 @@ router.post('/bloginsert',BlogController.bloginsert)
 router.get('/blogview/:id',BlogController.blogview)
 router.put('/blogupdate/:id',BlogController.updateblog)
 router.delete('/blogdelete/:id',BlogController.deleteblog)
+
+//Contact Controller
 router.get('/contactall',contactController.contactall)
 router.post('/contactinsert',contactController.contactinsert)
 
