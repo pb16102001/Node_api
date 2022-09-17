@@ -22,14 +22,14 @@ class BlogController {
 
     static bloginsert = async (req, res) => {
         res.header("Access-Control-Allow-Origin", "*")
-        const file =req.files.pimage;
+        // const file =req.files.pimage;
         //console.log(file)
 
-        const myimage = await cloudinary.uploader.upload(file.tempFilePath,{
-            folder:"blog_Profile",
-            width:150,
-        })
-        console.log(myimage)
+        // const myimage = await cloudinary.uploader.upload(file.tempFilePath,{
+        //     folder:"blog_Profile",
+        //     width:150,
+        // })
+        // console.log(myimage)
         console.log(req.body);
         try {
             const { title, description, body } = req.body
@@ -38,10 +38,10 @@ class BlogController {
                 title: title,
                 description: description,
                 body: body,
-                pimage:{
-                    public_id:myimage.public_id,
-                    url:myimage.secure_url,
-                }
+                // pimage:{
+                //     public_id:myimage.public_id,
+                //     url:myimage.secure_url,
+                // }
             })
 
             //save data
