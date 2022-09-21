@@ -46,7 +46,7 @@ cloudinary.config({
 
 
 //load route
- app.use('/api/pn',web)
+ app.use('/api/pn12',web)
 
 app.get('/', (req, res) => {
     res.send('Hello MEAN')
